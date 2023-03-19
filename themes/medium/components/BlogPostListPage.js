@@ -18,7 +18,7 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount }) => {
     return <BlogPostListEmpty />
   } else {
     return (
-      <div className='w-full justify-center'>
+      <div className='w-1/2 justify-center mx-8'>
         <div id='container'>
         {/* 文章列表 */}
         {posts.map(post => (

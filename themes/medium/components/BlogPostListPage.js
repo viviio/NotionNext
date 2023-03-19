@@ -11,7 +11,7 @@ import PaginationSimple from './PaginationSimple'
  * @returns {JSX.Element}
  * @constructor
  */
-const BlogPostListPage = ({ page = 1, posts = [], postCount }) => {
+const BlogPostListPage = ({ page = 2, posts = [], postCount }) => {
   const totalPage = Math.ceil(postCount / BLOG.POSTS_PER_PAGE)
 
   if (!posts || posts.length === 0) {

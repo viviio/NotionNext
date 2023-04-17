@@ -11,6 +11,7 @@ import BottomMenuBar from './components/BottomMenuBar'
 import { useGlobal } from '@/lib/global'
 import { useRouter } from 'next/router'
 import Live2D from '@/components/Live2D'
+import DarkModeButton from '@/components/DarkModeButton'
 import BLOG from '@/blog.config'
 const ThemeGlobalMedium = createContext()
 
@@ -46,14 +47,18 @@ const LayoutBase = props => {
                                 {slotRight}
                                 <div key={locale.NAV.ABOUT}>
                                     {showInfoCard && <InfoCard {...props} />}
-                                    {CONFIG_MEDIUM.WIDGET_REVOLVER_MAPS === 'true' && <RevolverMaps />}
                                 </div>
                             </Tabs>
                         </div>
                         
-                        <div className='px-8 max-w-5xl justify-center mx-auto min-h-screen'>
+                        <div className='px-12 max-w-8/10 justify-center mx-auto min-h-screen'>
                             {slotTop}
                             {children}
+                            
+                            {/* 切换暗模式按钮 */}
+                            <div className="bottom-40 right-2 fixed justify-end z-20 bg-slate-400">
+                                <DarkModeButton />
+                            </div>
 
                             {/* 回顶按钮 */}
                             <div

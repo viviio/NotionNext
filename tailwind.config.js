@@ -22,6 +22,7 @@ module.exports = {
       },
       maxWidth: {
         side: '14rem',
+        '8/10': '80%',
         '9/10': '90%'
       }
     },

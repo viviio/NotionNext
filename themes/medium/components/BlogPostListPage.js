@@ -19,7 +19,7 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount }) => {
   } else {
     return (
       <div className='w-full justify-center'>
-        <div id='container'className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div id='container'className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'>
         {/* 文章列表 */}
         {posts.map(post => (
           <BlogPostCard key={post.id} post={post} />

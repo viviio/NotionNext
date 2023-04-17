@@ -41,7 +41,7 @@ export default function TopNavBar(props) {
                 </div>
             </Collapse>
 
-            <div id="sticky-nav" className='flex w-full h-12 bg-opacity-60 dark:bg-hexo-black-gray px-7 items-between'>
+            <div id="sticky-nav" className='flex w-full h-12 bg-opacity-60 px-7 items-between'>
 
                 {/* 图标Logo */}
                 <LogoBar {...props} />

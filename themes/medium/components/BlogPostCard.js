@@ -20,29 +20,30 @@ const BlogPostCard = ({ post, showSummary }) => {
             className="max-w-7xl"
         >
 
-            <div className="flex flex-col w-full h-full shadow-lg bg-gray-800 rounded-lg ease-out duration-500  transform hover:scale-102 hover:shadow-2xl">
+            <div className="flex flex-col w-full h-full shadow-lg dark:bg-gray-800 rounded-md rounded-t-xl ease-out duration-500  transform hover:scale-102 hover:shadow-2xl">
                 <Link href={`${BLOG.SUB_PATH}/${post.slug}`}
-                    passHref className={'cursor-pointer font-bold text-3xl leading-tight text-gray-100 dark:text-gray-300 '}>
+                    passHref className={'cursor-pointer font-bold text-2xl leading-tight text-gray-600 dark:text-gray-300 '}>
                     
                     {/* 图片和标题 */}
                     <div>
-                        {CONFIG_MEDIUM.POST_LIST_COVER && <div className='w-full max-h-96 rounded-t-lg object-cover overflow-hidden mb-2'>
+                        {CONFIG_MEDIUM.POST_LIST_COVER && <div className='w-full max-h-96 rounded-t-md object-cover overflow-hidden mb-2'>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={post.page_cover} className='w-full max-h-96 object-cover hover:scale-125 duration-150' />
                         </div>}
-                        <div className="mx-6 mt-8">{post.title}</div>
+                        <div className="mx-6 mt-6">{post.title}</div>
                     </div>
 
                 </Link>
 
+                <div className="text-sm py-1 mx-6 text-gray-400 select-none">{post.date?.start_date}</div>
+
+
                 {/* 日期、目录、标签 */}
-                <div className={'flex mt-2 mx-6 items-center justify-start flex-wrap space-x-3 text-gray-400'}>
-                    
-                    <div className="text-sm py-1">{post.date?.start_date}</div>
-                    
-                    {CONFIG_MEDIUM.POST_LIST_CATEGORY && (
+                <div className={'flex py-1 mx-6 items-center justify-start flex-nowrap space-x-1 text-gray-400'}>
+                                                            
+                    {/* {CONFIG_MEDIUM.POST_LIST_CATEGORY && (
                         <CategoryItem category={post.category} />
-                    )}
+                    )} */}
 
                     {CONFIG_MEDIUM.POST_LIST_TAG &&
                         post?.tagItems?.map(tag => (
@@ -50,10 +51,10 @@ const BlogPostCard = ({ post, showSummary }) => {
                         ))}
                 </div>
 
-                <div className="flex"></div>
+                
 
                 {(!showPreview || showSummary) && (
-                    <p className="my-4 mx-6 text-gray-400 dark:text-gray-300 text-sm font-light leading-7">
+                    <p className="mt-1 mb-4 mx-6 text-gray-400 dark:text-gray-300 text-sm font-light leading-6 select-none">
                         {post.summary}
                     </p>
                 )}

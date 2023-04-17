@@ -18,8 +18,8 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount }) => {
     return <BlogPostListEmpty />
   } else {
     return (
-      <div className='w-1/2 justify-center mx-8'>
-        <div id='container'>
+      <div className='w-full justify-center'>
+        <div id='container'className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         {/* 文章列表 */}
         {posts.map(post => (
           <BlogPostCard key={post.id} post={post} />

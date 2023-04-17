@@ -31,14 +31,27 @@ const LayoutBase = props => {
             <div id='theme-medium' className='bg-white dark:bg-hexo-black-gray w-full h-full min-h-screen justify-center dark:text-gray-300'>
                 <CommonHead meta={meta} />
 
-                <main id='wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + 'relative flex justify-between w-full h-full mx-auto'}>
+                <main id='wrapper' className={'relative flex justify-center w-full h-full mx-auto'}>
                     {/* 桌面端左侧菜单 */}
                     {/* <LeftMenuBar/> */}
 
                     <div id='container-inner' className='w-full relative z-10'>
+                        
                         {/* 移动端顶部菜单 */}
                         <TopNavBar {...props} />
-                        <div className='px-7 max-w-5xl justify-center mx-auto min-h-screen'>
+                        
+                        {/* 头像和标语 */}
+                        <div className='py-14 px-6 top-0'>
+                            <Tabs>
+                                {slotRight}
+                                <div key={locale.NAV.ABOUT}>
+                                    {showInfoCard && <InfoCard {...props} />}
+                                    {CONFIG_MEDIUM.WIDGET_REVOLVER_MAPS === 'true' && <RevolverMaps />}
+                                </div>
+                            </Tabs>
+                        </div>
+                        
+                        <div className='px-8 max-w-5xl justify-center mx-auto min-h-screen'>
                             {slotTop}
                             {children}
 
@@ -57,20 +70,7 @@ const LayoutBase = props => {
                         <Footer title={siteInfo?.title} />
                     </div>
 
-                    {/* 桌面端右侧 */}
-                    <div className={`hidden xl:block border-l dark:border-transparent w-96 relative z-10 ${CONFIG_MEDIUM.RIGHT_PANEL_DARK ? 'bg-hexo-black-gray dark' : ''}`}>
-                        <div className='py-14 px-6 sticky top-0'>
-                            <Tabs>
-                                {slotRight}
-                                <div key={locale.NAV.ABOUT}>
-                                    {router.pathname !== '/search' && <SearchInput className='mt-6  mb-12' />}
-                                    {showInfoCard && <InfoCard {...props} />}
-                                    {CONFIG_MEDIUM.WIDGET_REVOLVER_MAPS === 'true' && <RevolverMaps />}
-                                </div>
-                            </Tabs>
-                            <Live2D />
-                        </div>
-                    </div>
+
                 </main>
 
                 <BottomMenuBar {...props} className='block md:hidden' />

@@ -17,35 +17,33 @@ const BlogPostCard = ({ post, showSummary }) => {
             data-aos-duration="300"
             data-aos-once="false"
             data-aos-anchor-placement="top-bottom"
-            className="mb-6 max-w-7xl border-b dark:border-gray-800 "
+            className="max-w-7xl"
         >
 
-            <div className="lg:py-8 py-4 flex flex-col w-full">
-                <Link
-                    href={`${BLOG.SUB_PATH}/${post.slug}`}
-                    passHref
-                    className={
-                        'cursor-pointer font-bold  hover:underline text-3xl leading-tight text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400'
-                    }>
+            <div className="flex flex-col w-full h-full shadow-lg bg-gray-800 rounded-lg ease-out duration-500  transform hover:scale-102 hover:shadow-2xl">
+                <Link href={`${BLOG.SUB_PATH}/${post.slug}`}
+                    passHref className={'cursor-pointer font-bold text-3xl leading-tight text-gray-100 dark:text-gray-300 '}>
+                    
+                    {/* 图片和标题 */}
                     <div>
-                        {CONFIG_MEDIUM.POST_LIST_COVER && <div className='w-full max-h-96 object-cover overflow-hidden mb-2'>
+                        {CONFIG_MEDIUM.POST_LIST_COVER && <div className='w-full max-h-96 rounded-t-lg object-cover overflow-hidden mb-2'>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={post.page_cover} className='w-full max-h-96 object-cover hover:scale-125 duration-150' />
                         </div>}
-                        {post.title}
+                        <div className="mx-6 mt-8">{post.title}</div>
                     </div>
 
                 </Link>
 
-                <div
-                    className={
-                        'flex mt-2 items-center justify-start flex-wrap space-x-3 text-gray-400'
-                    }
-                >
+                {/* 日期、目录、标签 */}
+                <div className={'flex mt-2 mx-6 items-center justify-start flex-wrap space-x-3 text-gray-400'}>
+                    
                     <div className="text-sm py-1">{post.date?.start_date}</div>
+                    
                     {CONFIG_MEDIUM.POST_LIST_CATEGORY && (
                         <CategoryItem category={post.category} />
                     )}
+
                     {CONFIG_MEDIUM.POST_LIST_TAG &&
                         post?.tagItems?.map(tag => (
                             <TagItemMini key={tag.name} tag={tag} />
@@ -55,13 +53,13 @@ const BlogPostCard = ({ post, showSummary }) => {
                 <div className="flex"></div>
 
                 {(!showPreview || showSummary) && (
-                    <p className="my-4 text-gray-700 dark:text-gray-300 text-sm font-light leading-7">
+                    <p className="my-4 mx-6 text-gray-400 dark:text-gray-300 text-sm font-light leading-7">
                         {post.summary}
                     </p>
                 )}
 
                 {showPreview && (
-                    <div className="overflow-ellipsis truncate">
+                    <div className="overflow-ellipsis truncate ">
                         <NotionPage post={post} />
                         <div className="pointer-events-none border-t pt-8 border-dashed">
                             <div className="w-full justify-start flex">
@@ -78,6 +76,7 @@ const BlogPostCard = ({ post, showSummary }) => {
                         </div>
                     </div>
                 )}
+                
             </div>
         </div>
   )

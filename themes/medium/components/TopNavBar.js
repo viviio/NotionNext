@@ -33,7 +33,7 @@ export default function TopNavBar(props) {
   }
 
   return (
-      <div id='top-nav' className={'sticky top-0 lg:relative w-full z-40 ' + className}>
+      <div id='sticky-nav' className={'sticky-nav sticky-nav-full top-0  w-full z-40 ' + className}>
             {/* 折叠菜单 */}
             <Collapse type='vertical' isOpen={isOpen} className='md:hidden'>
                 <div className='bg-white dark:bg-hexo-black-gray pt-1 py-2 px-7 lg:hidden '>
@@ -41,7 +41,7 @@ export default function TopNavBar(props) {
                 </div>
             </Collapse>
 
-            <div className='flex w-full h-12 shadow bg-white dark:bg-hexo-black-gray px-7 items-between'>
+            <div id="sticky-nav" className='flex w-full h-12 bg-opacity-60 dark:bg-hexo-black-gray px-7 items-between'>
 
                 {/* 图标Logo */}
                 <LogoBar {...props} />
@@ -64,8 +64,8 @@ export default function TopNavBar(props) {
                                 title={link.to}
                                 href={link.to}
                                 target={link.to.indexOf('http') === 0 ? '_blank' : '_self'}
-                                className={'px-2 duration-300 text-sm justify-between dark:text-gray-300 cursor-pointer flex flex-nowrap items-center ' +
-                                    (selected ? 'bg-green-600 text-white hover:text-white' : 'hover:text-green-600')}>
+                                className={'px-2 duration-300 text-sm justify-between transform hover:-translate-y-1 dark:text-gray-100 cursor-pointer flex flex-nowrap items-center ' +
+                                    (selected ? ' text-green-600 transform hover:-translate-y-1' : 'hover:text-blue-500')}>
 
                                 <div className='items-center justify-center flex '>
                                     <i className={link.icon} />

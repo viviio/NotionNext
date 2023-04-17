@@ -24,7 +24,11 @@ module.exports = {
         side: '14rem',
         '9/10': '90%'
       }
-    }
+    },
+      scale:{
+        '102': '1.02',
+      }
+
   },
   variants: {
     extend: {}

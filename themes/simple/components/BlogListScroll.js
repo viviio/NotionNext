@@ -44,7 +44,7 @@ export const BlogListScroll = props => {
   })
 
   return (
-      <div id="container" className="w-full md:pr-8 mb-12" ref={targetRef}>
+      <div id="container" className="grid grid-cols-1 md:grid-cols-2 w-full md:pr-8 mb-12" ref={targetRef}>
               {postsToShow.map(p => (
                   <BlogItem key={p.id} post={p}/>
               ))}

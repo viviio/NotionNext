@@ -43,6 +43,7 @@ const LayoutBase = props => {
                         
                         {/* 头像和标语 */}
                         <div className='py-14 px-6 top-0'>
+                            
                             <Tabs>
                                 {slotRight}
                                 <div key={locale.NAV.ABOUT}>

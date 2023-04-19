@@ -65,7 +65,7 @@ export default function TopNavBar(props) {
                                 href={link.to}
                                 target={link.to.indexOf('http') === 0 ? '_blank' : '_self'}
                                 className={'px-2 duration-300 text-sm justify-between transform hover:-translate-y-1 dark:text-gray-100 cursor-pointer flex flex-nowrap items-center ' +
-                                    (selected ? ' text-green-600 transform hover:-translate-y-1' : 'hover:text-blue-500')}>
+                                    (selected ? ' text-blue-600 transform hover:-translate-y-1' : 'hover:text-blue-500 dark:hover:text-blue-400')}>
 
                                 <div className='items-center justify-center flex '>
                                     <i className={link.icon} />

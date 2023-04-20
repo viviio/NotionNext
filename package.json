@@ -34,6 +34,7 @@
     "js-md5": "^0.7.3",
     "localStorage": "^1.0.4",
     "lodash.throttle": "^4.1.1",
+    "lottie-web": "^5.11.0",
     "mark.js": "^8.11.1",
     "memory-cache": "^0.2.0",
     "mermaid": "9.2.2",

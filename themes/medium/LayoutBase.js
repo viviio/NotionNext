@@ -1,5 +1,5 @@
 import CommonHead from '@/components/CommonHead'
-import { useState, createContext, useContext } from 'react'
+import { useEffect, useState, createContext, useContext } from 'react'
 import Footer from './components/Footer'
 import InfoCard from './components/InfoCard'
 import RevolverMaps from './components/RevolverMaps'
@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 import Live2D from '@/components/Live2D'
 import DarkModeButton from '@/components/DarkModeButton'
 import BLOG from '@/blog.config'
+import Lottie from 'lottie-web'
 const ThemeGlobalMedium = createContext()
 
 /**
@@ -26,6 +27,17 @@ const LayoutBase = props => {
   const { locale } = useGlobal()
   const router = useRouter()
   const [tocVisible, changeTocVisible] = useState(false)
+
+  useEffect(() => {
+    const mycat = document.getElementById('mycat')
+    Lottie.loadAnimation({
+      container: mycat,
+      renderer: 'svg',
+      loop: true,
+      autoplay:true,
+      path:'./data1.json'
+    })
+  }, [])
 
   return (
         <ThemeGlobalMedium.Provider value={{ tocVisible, changeTocVisible }}>
@@ -42,9 +54,12 @@ const LayoutBase = props => {
                         <TopNavBar {...props} />
                         
                         {/* 头像和标语 */}
-                        <div className='py-14 px-6 top-0'>
-                            <div className='flex justify-center'>
-                            <img src={'./meCat.png'} className='max-w-3/10' />
+                        <div className='-mt-8 top-0 flex-col flex items-center'>
+                            
+                            {/* lottie动画 */}
+                            <div className='-mb-16 md:max-w-8/10 md:-mt-10 md:-mb-20  xl:-mb-30 xl:max-w-6/10 xl:-mt-16 pr-8'>
+                            {/* <img src={'./meCat.png'} className='max-w-3/10' /> */}
+                                <div id="mycat"></div>
                             </div>
                             
                             <Tabs>

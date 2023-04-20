@@ -25,7 +25,7 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount }) => {
           <BlogPostCard key={post.id} post={post} />
         ))}
         </div>
-        <PaginationSimple page={page} totalPage={totalPage} />
+        <PaginationSimple page={page} totalPage={totalPage}/>
       </div>
     )
   }

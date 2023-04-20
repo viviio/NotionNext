@@ -6,6 +6,7 @@ import Collapse from '@/components/Collapse'
 import GroupMenu from './GroupMenu'
 import { useGlobal } from '@/lib/global'
 import CONFIG_MEDIUM from '../config_medium'
+import SocialButton from './SocialButton'
 
 /**
  * 顶部导航栏 + 菜单
@@ -41,20 +42,23 @@ export default function TopNavBar(props) {
                 </div>
             </Collapse>
 
-            <div id="sticky-nav" className='flex w-full h-12 bg-opacity-60 px-7 items-between'>
+            <div id="sticky-nav" className='flex w-full h-16 bg-opacity-60 px-7 items-between'>
 
                 {/* 图标Logo */}
                 <LogoBar {...props} />
 
-                {/* 右侧功能 */}
-                <div className='mr-1 flex md:hidden justify-end items-center text-sm space-x-4 font-serif dark:text-gray-200'>
-                    <div onClick={toggleMenuOpen} className='cursor-pointer'>
-                        {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
-                    </div>
-                </div>
+                {/* 右侧汉堡菜单 */}
 
-                {/* 顶部菜单 */}
-                <div className='hidden md:flex'>
+                  <div className='flex-1 flex md:hidden justify-center items-center text-sm space-x-4 font-serif dark:text-gray-200'>
+                      <div onClick={toggleMenuOpen} className='cursor-pointer'>
+                          {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
+                      </div>
+                  </div>
+
+               
+
+                {/* 顶部tab */}
+                <div className=' flex-1 hidden md:flex justify-center space-x-1.5'>
                     {navs && navs.map(link => {
                       if (link?.show) {
                         const selected = (router.pathname === link.to) || (router.asPath === link.to)
@@ -64,8 +68,8 @@ export default function TopNavBar(props) {
                                 title={link.to}
                                 href={link.to}
                                 target={link.to.indexOf('http') === 0 ? '_blank' : '_self'}
-                                className={'px-2 duration-300 text-sm justify-between transform hover:-translate-y-1 dark:text-gray-100 cursor-pointer flex flex-nowrap items-center ' +
-                                    (selected ? ' text-blue-600 transform hover:-translate-y-1' : 'hover:text-blue-500 dark:hover:text-blue-400')}>
+                                className={'px-3 my-3 rounded-full bg-opacity-40 border-indigo-500 dark:border-indigo-400 duration-300 transform hover:-translate-y-1 text-sm justify-between text-indigo-900 dark:text-indigo-100 cursor-pointer flex flex-nowrap items-center ' +
+                                    (selected ? ' text-indigo-900 bg-indigo-400 border' : ' hover:bg-indigo-300 hover:bg-opacity-20 hover:text-indigo-500 dark:hover:text-indigo-400')}>
 
                                 <div className='items-center justify-center flex '>
                                     <i className={link.icon} />
@@ -80,6 +84,10 @@ export default function TopNavBar(props) {
                       }
                     })}
                 </div>
+
+                <div className='flex-1 flex pr-4 justify-end'><SocialButton/></div>
+
+                
             </div>
         </div>
   )

@@ -43,6 +43,9 @@ const LayoutBase = props => {
                         
                         {/* 头像和标语 */}
                         <div className='py-14 px-6 top-0'>
+                            <div className='flex justify-center'>
+                            <img src={'./meCat.png'} className='max-w-3/10' />
+                            </div>
                             
                             <Tabs>
                                 {slotRight}

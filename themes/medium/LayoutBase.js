@@ -70,7 +70,7 @@ const LayoutBase = props => {
                             </Tabs>
                         </div>
                         
-                        <div className='px-12 max-w-8/10 justify-center mx-auto min-h-screen'>
+                        <div className='max-w-9/10 justify-center mx-auto min-h-screen'>
                             {slotTop}
                             {children}
                             

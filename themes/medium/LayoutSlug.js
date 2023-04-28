@@ -39,13 +39,13 @@ export const LayoutSlug = props => {
             {/* 文章锁 */}
             {lock && <ArticleLock validPassword={validPassword} />}
 
-            {!lock && <div id='container'>
+            {!lock && <div id='container' className=''>
 
                 {/* title */}
-                <h1 className="text-3xl pt-12  dark:text-gray-300">{post?.title}</h1>
+                <h1 className="max-w-2xl mx-auto text-3xl pt-12  dark:text-gray-300">{post?.title}</h1>
 
                 {/* meta */}
-                <section className="py-2 items-center text-sm  px-1">
+                <section className="max-w-2xl mx-auto py-2 items-center text-sm  px-1">
                     <div className='flex flex-wrap text-gray-500 py-1 dark:text-gray-600'>
                         <span className='whitespace-nowrap'> <i className='far fa-calendar mr-2' />{date}</span>
                         <span className='mx-1'>|</span>
@@ -67,7 +67,7 @@ export const LayoutSlug = props => {
                 </section>
 
                 {/* Notion文章主体 */}
-                <section id="notion-article" className="px-1 max-w-4xl">
+                <section id="notion-article" className="max-w-2xl mx-auto">
                     {post && (<NotionPage post={post} />)}
                 </section>
 

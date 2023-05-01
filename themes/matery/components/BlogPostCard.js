@@ -20,40 +20,60 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
           data-aos-delay={delay}
           data-aos-once="true"
           data-aos-anchor-placement="top-bottom"
-          className="w-full mb-4 overflow-auto shadow-md border dark:border-black rounded-xl bg-white dark:bg-hexo-black-gray">
+          className="flex flex-col w-full mb-4 ">
 
           {/* 固定高度 ，空白用图片拉升填充 */}
-          <div className="flex flex-col h-80 justify-between">
+          <div className="group flex flex-col h-96 justify-between rounded-md bg-day-card-normal dark:bg-hexo-black-gray ease-out duration-500 transform hover:scale-102 hover:bg-white hover:shadow-2xl">
 
               {/* 头部图片 填充卡片 */}
               {showPageCover && (
                   <Link href={`${BLOG.SUB_PATH}/${post.slug}`} passHref legacyBehavior>
                       <div
-                      className="flex flex-grow w-full relative duration-200 bg-black rounded-t-md  cursor-pointer transform overflow-hidden">
+                      className="h-72 m-3 relative duration-200 rounded-md cursor-pointer transform overflow-auto">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                               src={post?.page_cover}
                               alt={post.title}
-                              className="opacity-50 h-full w-full hover:scale-125 rounded-t-md  transform object-cover duration-500"
+                              className="h-full w-full hover:scale-125 rounded-t-md  transform object-cover duration-500"
                           />
-                          <span className='absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full' > {post.title}</span>
+                          
                       </div>
                   </Link>
               )}
 
+                {post?.tagItems && post?.tagItems.length > 0 && (<>
+                      <div className="absolute top-3 right-3 opacity-0 text-gray-400 justify-between flex p-3 ease-out duration-500 transform group-hover:opacity-100">
+                          <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
+                              <div>
+                                  {' '}
+                                  {post.tagItems.map(tag => (
+                                      <TagItemMini key={tag.name} tag={tag} />
+                                  ))}
+                              </div>
+                          </div>
+                      </div>
+                  </>)}
+
               {/* 文字描述 */}
               <div >
                   {/* 描述 */}
-                  <div className="px-4 flex flex-col w-full  text-gray-700  dark:text-gray-300">
+                  <div className="px-3 flex flex-col w-full  text-gray-700  dark:text-gray-300">
 
+
+                       <div className='my-1'>
+                            <span className=' text-black font-medium text-2xl replace break-words w-full' > {post.title}</span>
+                       </div>
+
+                      {/* 文章概述 */}
                       {(!showPreview || showSummary) && post.summary && (
                           <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: '4', WebkitBoxOrient: 'vertical' }}
-                              className="replace my-2 text-sm font-light leading-7">
+                              className="replace mb-4 text-sm font-light text-day-item-hover leading-7 overflow-ellipsis truncate">
                               {post.summary}
                           </p>
                       )}
 
-                      <div className='text-gray-800 justify-between flex my-2  dark:text-gray-300'>
+                      {/* 日期 */}
+                      {/* <div className='text-gray-800 justify-between flex my-2  dark:text-gray-300'>
                           <Link
                               href={`/archive#${post?.date?.start_date?.substr(0, 7)}`}
                               passHref
@@ -72,22 +92,10 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                               {post.category}
 
                           </Link>
-                      </div>
+                      </div> */}
                   </div>
 
-                  {post?.tagItems && post?.tagItems.length > 0 && (<>
-                      <hr />
-                      <div className="text-gray-400 justify-between flex px-5 py-3">
-                          <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
-                              <div>
-                                  {' '}
-                                  {post.tagItems.map(tag => (
-                                      <TagItemMini key={tag.name} tag={tag} />
-                                  ))}
-                              </div>
-                          </div>
-                      </div>
-                  </>)}
+                  
               </div>
           </div>
 

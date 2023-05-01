@@ -9,6 +9,8 @@ import MenuButtonGroupTop from './MenuButtonGroupTop'
 import SideBarDrawer from '@/components/SideBarDrawer'
 import SideBar from './SideBar'
 import throttle from 'lodash.throttle'
+import SocialButton from './SocialButton'
+import FloatDarkModeButton from './FloatDarkModeButton'
 
 let windowTop = 0
 
@@ -28,7 +30,7 @@ const TopNav = props => {
       const scrollS = window.scrollY
       const nav = document.querySelector('#sticky-nav')
       const header = document.querySelector('#header')
-      const showNav = scrollS <= windowTop || scrollS < 5 || (header && scrollS <= header.clientHeight * 2)// 非首页无大图时影藏顶部 滚动条置顶时隐藏// 非首页无大图时影藏顶部 滚动条置顶时隐藏
+      const showNav = scrollS <= windowTop || scrollS < 5 || (header && scrollS <= header.clientHeight * 2)// 非首页无大图时影藏顶部 滚动条置顶时隐藏
       // 是否将导航栏透明
       const navTransparent = header && scrollS < 300 // 透明导航条的条件
 
@@ -37,11 +39,13 @@ const TopNav = props => {
         nav && nav.classList.replace('text-black', 'text-white')
         nav && nav.classList.replace('drop-shadow-xl', 'shadow-none')
         nav && nav.classList.replace('dark:bg-hexo-black-gray', 'transparent')
+        // nav && nav.classList.remove('backdrop-filter', 'backdrop-blur-lg')
       } else {
         nav && nav.classList.replace('bg-none', 'bg-indigo-700')
         nav && nav.classList.replace('text-white', 'text-black')
         nav && nav.classList.replace('shadow-none', 'drop-shadow-xl')
         nav && nav.classList.replace('transparent', 'dark:bg-hexo-black-gray')
+        // nav && nav.classList.add('backdrop-filter', 'backdrop-blur-lg')
       }
 
       if (!showNav) {
@@ -129,25 +133,37 @@ const TopNav = props => {
       <div id='top-nav'>
             <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
             {/* 导航栏 */}
-            <div id='sticky-nav' className={'flex justify-center top-0 shadow-black shadow-none fixed bg-none dark:bg-hexo-black-gray text-gray-200 w-full z-30 transform transition-all duration-200'}>
-                <div className='w-full max-w-6xl flex justify-between items-center px-4 py-2'>
-                    {/* 左侧功能 */}
-                    <div className='justify-start items-center block lg:hidden '>
-                        <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
-                            {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
-                        </div>
-                    </div>
-
-                    <div className='flex'>
+            <div id='sticky-nav' className={'top-0 fixed w-full z-30 bg-day dark:bg-night-card-normal transform transition-all duration-300 ease-in-out'}>
+                <div className='flex w-full max-w-full justify-between items-center px-4 py-2'>
+                    
+                    {/* logo */}
+                    <div className='flex-none w-10 h-10'>
                         <Logo {...props} />
                     </div>
 
-                    {/* 右侧功能 */}
-                    <div className='mr-1 justify-end items-center '>
-                        <div className='hidden lg:flex'> <MenuButtonGroupTop {...props} /></div>
+                    {/* 汉堡菜单 */}
+                    {/* <div className='flex-1 flex justify-center items-center hidden '>
+                        <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex md:hidden'>
+                            {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
+                        </div>
+                    </div> */}
+
+                    {/* 功能组 */}
+                    <div className='flex-grow flex justify-end items-center'> <MenuButtonGroupTop {...props} /></div>
+
+                    {/* 搜索按钮 */}
+                    {/* <div className='flex-1 flex justify-end items-center '>
                         <div className='block lg:hidden'><Link href={'/search'} passHref>
                             <i className='fas fa-search' />
                         </Link></div>
+                    </div> */}
+                    
+                    {/* 社交按钮 */}
+                    {/* <div className='flex-none w-40 flex pr-4 justify-end'><SocialButton/></div> */}
+
+                    {/* 黑夜按钮 */}
+                    <div className="flex-none w-10 h-10 justify-end">
+                      <FloatDarkModeButton />
                     </div>
                 </div>
 

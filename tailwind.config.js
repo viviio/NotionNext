@@ -9,14 +9,22 @@ module.exports = {
     extend: {
       colors: {
         day: {
-          DEFAULT: BLOG.BACKGROUND_LIGHT || '#ffffff'
+          DEFAULT: BLOG.BACKGROUND_LIGHT || '#ffffff',
+          'card-normal':'#f5f7f7',
+          'card-hover':'#e7eaee',
+          'item-normal':'#8d8d8e',
+          'item-hover':'#7d8aa8',
         },
         night: {
-          DEFAULT: BLOG.BACKGROUND_DARK || '#111827'
+          DEFAULT: BLOG.BACKGROUND_DARK || '#151922',
+          'card-normal':'#1f2532',
+          'card-hover':'#303d56',
+          'item-normal':'#7d8aa8',
+          'item-hover':'#5e6c8d',
         },
         hexo: {
-          'background-gray': '#f5f5f5',
-          'black-gray': '#101414',
+          'background-gray': '#f5f7f7',
+          'black-gray': '#1f2532',
           'light-gray': '#e5e5e5'
         }
       },
@@ -35,6 +43,9 @@ module.exports = {
     },
       scale:{
         '102': '1.02',
+        '105': '1.05',
+        '110': '1.10',
+        '120': '1.20',
       },
       maxHeight: {
         '128':'56rem',

@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useGlobal } from '@/lib/global'
 import CONFIG_MATERY from '../config_matery'
 
 const MenuButtonGroupTop = (props) => {
   const { customNav } = props
+  const router = useRouter()
   const { locale } = useGlobal()
 
   let links = [
@@ -19,20 +21,22 @@ const MenuButtonGroupTop = (props) => {
   }
 
   return (
-    <nav id='nav' className='leading-8 flex justify-center  font-light w-full'>
+    <nav id='nav' className='flex justify-center font-light w-full space-x-4'>
       {links.map(link => {
-        if (link.show) {
+        if (link?.show) {
+          const selected = (router.pathname === link.to) || (router.asPath === link.to)
           return (
             <Link
               key={`${link.to}`}
               title={link.to}
               href={link.to}
               target={link.to.indexOf('http') === 0 ? '_blank' : '_self'}
-              className={'py-1.5 my-1 px-3  text-base justify-center items-center cursor-pointer'}>
+              className={'flex items-center w-10 h-10 p-3 clothoid-corner cursor-pointer duration-300 ' +
+              (selected ? ' bg-indigo-100 text-indigo-500 dark:bg-night-card-hover dark:text-gray-300 drop-shadow-xl' : 'text-day-item-hover hover:bg-indigo-100 hover:text-indigo-500 dark:hover:bg-night-card-hover dark:hover:text-gray-300')}>
 
-              <div className='w-full flex text-sm items-center justify-center hover:scale-125 duration-200 transform'>
-                <i className={`${link.icon} mr-1`}/>
-                <div className='text-center'>{link.name}</div>
+              <div className='mx-auto'>
+                <i className={`${link.icon}`}/>
+                {/* <div className='text-center'>{link.name}</div> */}
               </div>
 
             </Link>

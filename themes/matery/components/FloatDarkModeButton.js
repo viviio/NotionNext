@@ -20,10 +20,10 @@ export default function FloatDarkModeButton() {
   }
 
   return (
-        <div className={'justify-center items-center text-center' } onClick={handleChangeDarkMode}>
+        <div className={'flex items-center w-10 h-10 p-3 justify-center text-center rounded-full  bg-indigo-700 dark:bg-black' } onClick={handleChangeDarkMode}>
             <i id="darkModeButton"
                 className={`${isDarkMode ? 'fa-sun' : 'fa-moon'} fas transform hover:scale-105 duration-200
-                text-2xl text-white bg-indigo-700 px-3 py-2.5 rounded-full dark:bg-black cursor-pointer`} />
+                 text-white cursor-pointer`} />
         </div>
   )
 }

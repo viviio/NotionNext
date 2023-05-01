@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import Typed from 'typed.js'
 import CONFIG_MATERY from '../config_matery'
 import throttle from 'lodash.throttle'
+import Lottie from 'lottie-web'
 
 let wrapperTop = 0
 let windowTop = 0
@@ -84,12 +85,35 @@ const Header = props => {
     })
   }
 
+  useEffect(() => {
+    const mycat = document.getElementById('mycat')
+    Lottie.loadAnimation({
+      container: mycat,
+      renderer: 'svg',
+      loop: true,
+      autoplay:true,
+      path:'./data1.json'
+    })
+  }, [])
+
+
+
   return (
         <header
             id="header"
-            className="md:bg-fixed w-full h-screen bg-day dark:bg-black text-white relative"
+            className="md:bg-fixed w-full h-full bg-day dark:bg-night text-white relative"
         >
-            <div className='w-full h-full absolute'>
+            <div className='w-full h-full'>
+
+                {/* lottie动画 vviii slogan */}
+                <div className='mt-8 top-0 flex-col flex items-center'>            
+                    <div id="mycat" className='h-96 -mb-16 pr-8'></div>      
+                    <div className='text-2xl md:text-3xl text-black dark:text-day'>{siteInfo?.title}</div>
+                    <div className='mt-2 h-12 items-center text-center text-day-item-hover dark:text-night-item-hover text-md md:text-lg'>
+                        <span id='typed' />
+                    </div>  
+                </div>
+
                 {/* <Image src={siteInfo.pageCover} fill
                     style={{ objectFit: 'cover' }}
                     className='opacity-70'
@@ -99,16 +123,12 @@ const Header = props => {
                 {/* <img src={siteInfo.pageCover} className='h-full w-full object-cover opacity-70 ' /> */}
             </div>
 
-            <div className="absolute flex flex-col h-full items-center justify-center w-full ">
-                <div className='text-4xl md:text-5xl text-black'>{siteInfo?.title}</div>
-                <div className='mt-2 h-12 items-center text-center text-black text-lg'>
-                    <span id='typed' />
-                </div>
+            {/* <div className="absolute flex flex-col h-full items-center justify-center w-full ">
                 <div onClick={() => { window.scrollTo({ top: wrapperTop, behavior: 'smooth' }) }}
                     className="mt-12 border cursor-pointer w-40 text-center pt-4 pb-3 text-md text-white hover:bg-orange-600 duration-300 rounded-3xl">
                     <i className='animate-bounce fas fa-angle-double-down' /> <span>开始阅读</span>
                 </div>
-            </div>
+            </div> */}
 
         </header>
   )

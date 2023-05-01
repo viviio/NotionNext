@@ -30,7 +30,7 @@ const TopNav = props => {
       const scrollS = window.scrollY
       const nav = document.querySelector('#sticky-nav')
       const header = document.querySelector('#header')
-      const showNav = scrollS <= windowTop || scrollS < 5 || (header && scrollS <= header.clientHeight * 2)// 非首页无大图时影藏顶部 滚动条置顶时隐藏
+      const showNav = scrollS <= windowTop || scrollS < 5 || (header && scrollS <= header.clientHeight * 1)// 非首页无大图时影藏顶部 滚动条置顶时隐藏
       // 是否将导航栏透明
       const navTransparent = header && scrollS < 300 // 透明导航条的条件
 
@@ -55,7 +55,7 @@ const TopNav = props => {
         nav && nav.classList.replace('-top-20', 'top-0')
         windowTop = scrollS
       }
-      navDarkMode()
+      // navDarkMode()
     })
   }, throttleMs))
 
@@ -133,7 +133,7 @@ const TopNav = props => {
       <div id='top-nav'>
             <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
             {/* 导航栏 */}
-            <div id='sticky-nav' className={'top-0 fixed w-full z-30 bg-day dark:bg-night-card-normal transform transition-all duration-300 ease-in-out'}>
+            <div id='sticky-nav' className={'top-0 fixed w-full z-30 border-b border-gray-200 dark:border-none bg-day dark:bg-night-card-normal transform transition-all duration-300 ease-in-out'}>
                 <div className='flex w-full max-w-full justify-between items-center px-4 py-2'>
                     
                     {/* logo */}

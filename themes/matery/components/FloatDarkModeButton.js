@@ -20,7 +20,7 @@ export default function FloatDarkModeButton() {
   }
 
   return (
-        <div className={'flex items-center w-10 h-10 p-3 justify-center text-center rounded-full  bg-indigo-700 dark:bg-black' } onClick={handleChangeDarkMode}>
+        <div className={'flex items-center w-10 h-10 p-3 justify-center text-center rounded-full  bg-indigo-100 dark:bg-night-card-hover' } onClick={handleChangeDarkMode}>
             <i id="darkModeButton"
                 className={`${isDarkMode ? 'fa-sun' : 'fa-moon'} fas transform hover:scale-105 duration-200
                  text-white cursor-pointer`} />

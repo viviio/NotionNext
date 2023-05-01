@@ -41,27 +41,28 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                   </Link>
               )}
 
-                {post?.tagItems && post?.tagItems.length > 0 && (<>
-                      <div className="absolute top-3 right-3 opacity-0 text-gray-400 justify-between flex p-3 ease-out duration-500 transform group-hover:opacity-100">
-                          <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
-                              <div>
-                                  {' '}
-                                  {post.tagItems.map(tag => (
-                                      <TagItemMini key={tag.name} tag={tag} />
-                                  ))}
-                              </div>
-                          </div>
-                      </div>
-                  </>)}
+              {/* 标签 */}
+              {post?.tagItems && post?.tagItems.length > 0 && (<>
+                    <div className="absolute top-3 right-3 opacity-0 justify-between flex p-3 ease-out duration-500 transform group-hover:opacity-100">
+                        <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
+                            <div>
+                                {' '}
+                                {post.tagItems.map(tag => (
+                                    <TagItemMini key={tag.name} tag={tag} />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </>)}
 
               {/* 文字描述 */}
               <div >
                   {/* 描述 */}
                   <div className="px-3 flex flex-col w-full  text-gray-700  dark:text-gray-300">
 
-
+                      {/* 文章标题 */}
                        <div className='my-1'>
-                            <span className=' text-black font-medium text-2xl replace break-words w-full' > {post.title}</span>
+                            <span className=' text-black dark:text-day-card-normal font-medium text-2xl replace break-words w-full' > {post.title}</span>
                        </div>
 
                       {/* 文章概述 */}

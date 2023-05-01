@@ -47,26 +47,26 @@ export const LayoutSlug = props => {
 
         <div id='inner-wrapper'>
             <div className={'w-full mx-auto max-w-3xl'}>
-                <div className="-mt-32 rounded-md mx-3 bg-white dark:bg-hexo-black-gray  dark:border-black">
+                <div className=" rounded-md ">
                     {lock && <ArticleLock validPassword={validPassword} />}
 
-                    {!lock && <div id="container" className="overflow-x-auto md:w-full px-3 ">
+                    {!lock && <div id="container" className="mx-auto overflow-x-auto max-w-3xl px-3 ">
                         {post?.type && post?.type === 'Post' && <>
                             <div
-                                data-aos="fade-down"
-                                data-aos-duration="100"
-                                data-aos-once="false"
-                                data-aos-anchor-placement="top-center"
-                                className='px-10'>
+                                // data-aos="fade-down"
+                                // data-aos-duration="100"
+                                // data-aos-once="false"
+                                // data-aos-anchor-placement="top-center"
+                                className=''>
                                 <ArticleInfo post={post} />
                             </div>
-                            <hr />
+
                         </>}
 
-                        <div className='lg:px-10 subpixel-antialiased'>
+                        <div className=' subpixel-antialiased'>
                             <article itemScope >
                                 {/* Notion文章主体 */}
-                                <section id='notion-article' className='justify-center mx-auto max-w-2xl lg:max-w-full'>
+                                <section id='notion-article' className='justify-center mx-auto max-w-3xl'>
                                     {post && <NotionPage post={post} />}
                                 </section>
 
@@ -82,16 +82,16 @@ export const LayoutSlug = props => {
                                 </section>
 
                                 {/* 文章版权说明 */}
-                                {post.type === 'Post' && <ArticleCopyright {...props} />}
+                                {/* {post.type === 'Post' && <ArticleCopyright {...props} />} */}
 
                             </article>
 
-                            <hr className='border-dashed' />
+                            {/* <hr className='border-dashed' /> */}
 
                             {/* 评论互动 */}
-                            <div className="overflow-x-auto dark:bg-hexo-black-gray px-3">
+                            {/* <div className="overflow-x-auto dark:bg-hexo-black-gray px-3">
                                 <Comment frontMatter={post} />
-                            </div>
+                            </div> */}
                         </div>
 
                     </div>}
@@ -108,8 +108,8 @@ export const LayoutSlug = props => {
                         data-aos-once="true"
                         data-aos-anchor-placement="top-center"
                         className='relative h-full'>
-                        <div className='float-right xl:-mr-72 xl:w-72 w-56 -mr-56 h-full mt-40'>
-                            <div className='sticky top-24'>
+                        <div className='opacity-0 float-right w-60 px-10 -mr-44 h-full mt-40 ease-out duration-500 hover:opacity-100'>
+                            <div className='sticky top-24 text-sm'>
                                 <Catalog toc={post.toc} />
                             </div>
                         </div>
@@ -118,9 +118,9 @@ export const LayoutSlug = props => {
 
             </div>
 
-            <div className='fixed bottom-28 right-4'>
+            {/* <div className='fixed bottom-28 right-4'>
                 <JumpToCommentButton />
-            </div>
+            </div> */}
 
         </div>
 

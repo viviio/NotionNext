@@ -26,7 +26,8 @@ const MenuButtonGroupTop = (props) => {
         if (link?.show) {
           const selected = (router.pathname === link.to) || (router.asPath === link.to)
           return (
-            <Link
+            <div className='group w-10 h-10'>
+              <Link
               key={`${link.to}`}
               title={link.to}
               href={link.to}
@@ -39,12 +40,21 @@ const MenuButtonGroupTop = (props) => {
                 {/* <div className='text-center'>{link.name}</div> */}
               </div>
 
-            </Link>
+              </Link>
+
+              <div className='select-none opacity-0 flex items-center relative mx-auto w-16 h-6 top-1 right-3 rounded-md text-xs text-center text-white bg-indigo-500 ease-in-out duration-300 transform group-hover:translate-y-2 group-hover:opacity-100'>
+                  <p className='mx-auto'>{link.name}</p>
+              </div>
+
+            </div>
+            
+            
           )
         } else {
           return null
         }
       })}
+
     </nav>
   )
 }

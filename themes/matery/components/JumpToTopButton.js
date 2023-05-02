@@ -16,9 +16,9 @@ const JumpToTopButton = ({ showPercent = true, percent }) => {
   if (!CONFIG_MATERY.WIDGET_TO_TOP) {
     return <></>
   }
-  return (<div className=' drop-shadow-md space-x-1 items-center justify-center transform hover:scale-105 duration-200 px-3 py-2 border border-gray-200 dark:border-gray-600 text-center text-day-item-normal dark:text-night-item-normal bg-none dark:bg-hexo-black-gray rounded-full'
+  return (<div className='h-10 w-10 space-x-1 items-center justify-center transform hover:scale-105 hover:border-indigo-400 hover:text-indigo-400 dark:hover:border-indigo-400 dark:hover:text-indigo-400 duration-200 px-3 py-2 border border-gray-200 dark:border-gray-600 text-center text-day-item-normal dark:text-night-item-normal bg-none dark:bg-hexo-black-gray rounded-full'
          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >
-        <div title={locale.POST.TOP} ><i className='fas fa-arrow-up text-2xl rounded-full' /></div>
+        <div title={locale.POST.TOP} ><i className='fas fa-arrow-up text-sm rounded-full' /></div>
         {showPercent && (<div className='text-md hidden lg:block'>{percent}</div>)}
     </div>)
 }

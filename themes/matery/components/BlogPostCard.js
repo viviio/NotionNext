@@ -62,13 +62,13 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
 
                       {/* 文章标题 */}
                        <div className='my-1'>
-                            <span className=' text-black dark:text-day-card-normal font-medium text-2xl replace break-words w-full' > {post.title}</span>
+                            <span className=' text-black dark:text-day-card-normal font-medium text-xl replace break-words w-full' > {post.title}</span>
                        </div>
 
                       {/* 文章概述 */}
                       {(!showPreview || showSummary) && post.summary && (
                           <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: '4', WebkitBoxOrient: 'vertical' }}
-                              className="replace mb-4 text-sm font-light text-day-item-hover leading-7 overflow-ellipsis truncate">
+                              className="replace mb-4 text-sm text-day-item-hover leading-7 overflow-ellipsis truncate">
                               {post.summary}
                           </p>
                       )}

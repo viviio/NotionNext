@@ -137,7 +137,7 @@ const TopNav = props => {
                 <div className='flex w-full max-w-full justify-between items-center px-4 py-2'>
                     
                     {/* logo */}
-                    <div className='flex-none w-10 h-10'>
+                    <div className='flex-1 flex h-10 justify-start items-center'>
                         <Logo {...props} />
                     </div>
 
@@ -162,7 +162,7 @@ const TopNav = props => {
                     {/* <div className='flex-none w-40 flex pr-4 justify-end'><SocialButton/></div> */}
 
                     {/* 黑夜按钮 */}
-                    <div className="flex-none w-10 h-10 justify-end">
+                    <div className="flex-1 flex w-10 h-10 justify-end items-center">
                       <FloatDarkModeButton />
                     </div>
                 </div>

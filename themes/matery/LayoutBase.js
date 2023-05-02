@@ -51,7 +51,7 @@ const LayoutBase = props => {
 
             {/* 卡片组 */}
             <main id="wrapper" className="flex-1 w-full py-8 px-8 relative bg-day dark:bg-night">
-                <div id="container-inner" className="w-full max-w-6xl mx-auto lg:flex lg:space-x-4 justify-center relative z-10">
+                <div id="container-inner" className="w-full max-w-6xl mx-auto justify-center relative z-10">
                     {onLoading ? <LoadingCover /> : children}
                 </div>
             </main>

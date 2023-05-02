@@ -25,7 +25,11 @@ module.exports = {
         hexo: {
           'background-gray': '#f5f7f7',
           'black-gray': '#1f2532',
-          'light-gray': '#e5e5e5'
+          'light-gray': '#e5e5e5',
+        },
+        t:{
+          'p':'#686873',
+          'pn':'#9493A0',
         }
       },
       maxWidth: {

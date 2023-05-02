@@ -25,8 +25,8 @@ const Header = props => {
       changeType(
         new Typed('#typed', {
           strings: CONFIG_MATERY.HOME_BANNER_GREETINGS,
-          typeSpeed: 200,
-          backSpeed: 100,
+          typeSpeed: 50,
+          backSpeed: 50,
           backDelay: 400,
           showCursor: true,
           smartBackspace: true
@@ -107,7 +107,7 @@ const Header = props => {
 
                 {/* lottie动画 vviii slogan */}
                 <div className='mt-8 top-0 flex-col flex items-center'>            
-                    <div id="mycat" className='h-96 -mb-16 pr-8'></div>      
+                    <div id="mycat" className='h-full sm:h-96 -mb-8 sm:-mb-16 pr-8'></div>      
                     <div className='text-2xl md:text-3xl text-black dark:text-day'>{siteInfo?.title}</div>
                     <div className='mt-2 h-12 items-center text-center text-day-item-hover dark:text-night-item-hover text-md md:text-lg'>
                         <span id='typed' />

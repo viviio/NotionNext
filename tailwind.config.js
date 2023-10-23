@@ -21,6 +21,7 @@ module.exports = {
           'card-hover':'#303d56',
           'item-normal':'#7d8aa8',
           'item-hover':'#5e6c8d',
+          'text-normal':'#c5c5c5',
         },
         hexo: {
           'background-gray': '#f5f7f7',

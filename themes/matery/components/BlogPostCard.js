@@ -29,12 +29,12 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
               {showPageCover && (
                   <Link href={`${BLOG.SUB_PATH}/${post.slug}`} passHref legacyBehavior>
                       <div
-                      className="h-72 m-3 relative duration-200 rounded-md cursor-pointer transform overflow-auto">
+                      className="h-72 m-3 relative duration-200 rounded-md cursor-pointer transform overflow-clip">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                               src={post?.page_cover}
                               alt={post.title}
-                              className="h-full w-full hover:scale-125 rounded-t-md  transform object-cover duration-500"
+                              className="h-full w-full  rounded-t-md  transform group-hover:scale-110 object-cover duration-500"
                           />
                           
                       </div>
@@ -62,13 +62,13 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
 
                       {/* 文章标题 */}
                        <div className='my-1'>
-                            <span className=' text-black dark:text-day-card-normal font-medium text-xl replace break-words w-full' > {post.title}</span>
+                            <span className=' text-black dark:text-night-text-normal font-medium text-xl replace break-words w-full dark:hover:text-white' > {post.title}</span>
                        </div>
 
                       {/* 文章概述 */}
                       {(!showPreview || showSummary) && post.summary && (
                           <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: '4', WebkitBoxOrient: 'vertical' }}
-                              className="replace mb-4 text-sm text-day-item-hover leading-7 overflow-ellipsis truncate">
+                              className="replace mb-4 text-sm text-day-item-hover leading-7 overflow-ellipsis truncate dark:hover:text-white">
                               {post.summary}
                           </p>
                       )}

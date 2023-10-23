@@ -406,9 +406,9 @@ summary > .notion-h {
 }
 
 .notion-h1 {
-  font-size: 1.575em;
+  font-size: 2.275em;
   margin-top: 1.08em;
-  @apply border-b w-full
+  @apply w-full
 }
 .notion-h2 {
   @apply w-full
@@ -436,11 +436,11 @@ summary > .notion-h {
   margin-top: 2px;
 } */
 .notion-h2 {
-  font-size: 1.4em;
+  font-size: 1.8em;
   margin-top: 1.1em;
 }
 .notion-h3 {
-  font-size: 1.25em;
+  font-size: 1.5em;
   margin-top: 1em;
 }
 
@@ -537,7 +537,7 @@ summary > .notion-h {
 }
 
 .notion-small-text {
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .notion-quote {
@@ -545,7 +545,7 @@ summary > .notion-h {
   width: 100%;
   white-space: pre-wrap;
   word-break: break-word;
-  border-left: 3px solid currentcolor;
+  border-left: 1px solid currentcolor;
   padding: 0.2em 0.9em;
   margin: 6px 0;
   font-size: 1.2em;

@@ -33,7 +33,7 @@ export default function SideRight(props) {
   } = props
 
   return (
-        <div id='sideRight' className='hidden xl:block w-72 space-y-4 h-full'>
+        <div id='sideRight' className='hidden lg:block w-72 space-y-4 h-full'>
 
             <InfoCard {...props} className='w-72' />
 
@@ -48,14 +48,14 @@ export default function SideRight(props) {
                 <TouchMeCard />
 
                 {/* 最新文章列表 */}
-                <div className={'border dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-xl lg:p-6 p-4 hidden lg:block bg-white'}>
+                <div className={'border dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-xl lg:p-7 p-6 hidden lg:block bg-white'}>
                     <LatestPostsGroupMini {...props} />
                 </div>
 
                 {rightAreaSlot}
 
                 <FaceBookPage />
-                <Live2D />
+                {/* <Live2D /> */}
 
                 {/* 标签和成绩 */}
                 <Card className={'bg-white dark:bg-[#1e1e1e] dark:text-white'}>

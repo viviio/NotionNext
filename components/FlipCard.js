@@ -27,7 +27,7 @@ export default function FlipCard(props) {
             display: inline-block;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 0.2s;
+            transition: transform 0.2s ease-in-out;
           }
           
           .flip-card-front,

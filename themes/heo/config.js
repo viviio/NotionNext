@@ -5,8 +5,8 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   NOTICE_BAR: [
-    { title: '欢迎来到我的博客', url: 'https://blog.tangly1024.com' },
-    { title: '访问文档中心获取更多帮助', url: 'https://docs.tangly1024.com' }
+    //{ title: '欢迎来到我的博客', url: 'https://blog.tangly1024.com' },
+    //{ title: '访问文档中心获取更多帮助', url: 'https://docs.tangly1024.com' }
   ],
 
   // 英雄区(首页顶部大卡)
@@ -28,7 +28,7 @@ const CONFIG = {
 
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   INFOCARD_GREETINGS: [
-    '你好！我是',
+    'Renew & Create',
     '🔍 分享与热心帮助',
     '🤝 专修交互与设计',
     '🏃 脚踏实地行动派',
@@ -98,11 +98,11 @@ const CONFIG = {
     }
   ],
 
-  SOCIAL_CARD: true, // 是否显示右侧，点击加入社群按钮
-  SOCIAL_CARD_TITLE_1: '交流频道',
-  SOCIAL_CARD_TITLE_2: '加入我们的社群讨论分享',
-  SOCIAL_CARD_TITLE_3: '点击加入社群',
-  SOCIAL_CARD_URL: 'https://docs.tangly1024.com/article/how-to-question',
+  SOCIAL_CARD: true, // 是否显示右侧，点击加入社群按钮，改成了pdf链接
+  SOCIAL_CARD_TITLE_1: 'Portfolio Download',
+  SOCIAL_CARD_TITLE_2: '2021-2023 UX/UI',
+  SOCIAL_CARD_TITLE_3: '点击下载作品集PDF',
+  SOCIAL_CARD_URL: 'https://pan.baidu.com/s/1Gxsmvq4bzCXMqap2xz8T3A?pwd=1234&_at_=1698059157398#list/path=%2F',
 
   // *****  以下配置无效，只是预留开发 ****
   // 菜单配置
@@ -129,6 +129,81 @@ const CONFIG = {
   WIDGET_TO_TOP: true,
   WIDGET_TO_COMMENT: true, // 跳到评论区
   WIDGET_DARK_MODE: true, // 夜间模式
-  WIDGET_TOC: true // 移动端悬浮目录
+  WIDGET_TOC: true, // 移动端悬浮目录
+
+
+  // 用户技能图标
+  SCROLLING_ICONS: [
+    {
+      title: 'AfterEffect',
+      img: '/images/heo/20239df3f66615b532ce571eac6d14ff21cf072602.webp',
+      color: '#989bf8',
+    },
+    {
+      title: 'Sketch',
+      img: '/images/heo/2023e0ded7b724a39f12d59c3dc8fbdc7cbe074202.webp',
+      color: '#ffffff'
+    },
+    {
+      title: 'Docker',
+      img: '/images/heo/20231108a540b2862d26f8850172e4ea58ed075102.webp',
+      color: '#57b6e6',
+    },
+    {
+      title: 'Photoshop',
+      img: '/images/heo/2023e4058a91608ea41751c4f102b131f267075902.webp',
+      color: '#4082c3'
+    },
+    {
+      title: 'FinalCutPro',
+      img: '/images/heo/20233e777652412247dd57fd9b48cf997c01070702.webp',
+      color: '#ffffff',
+    },
+    {
+      title: 'Python',
+      img: '/images/heo/20235c0731cd4c0c95fc136a8db961fdf963071502.webp',
+      color: '#ffffff'
+    },
+    {
+      title: 'Swift',
+      img: '/images/heo/202328bbee0b314297917b327df4a704db5c072402.webp',
+      color: '#eb6840',
+    },
+    {
+      title: 'Principle',
+      img: '/images/heo/2023f76570d2770c8e84801f7e107cd911b5073202.webp',
+      color: '#8f55ba'
+    },
+    {
+      title: 'illustrator',
+      img: '/images/heo/20237359d71b45ab77829cee5972e36f8c30073902.webp',
+      color: '#f29e39',
+    },
+    {
+      title: 'CSS3',
+      img: '/images/heo/20237c548846044a20dad68a13c0f0e1502f074602.webp',
+      color: '#2c51db'
+    },
+    {
+      title: 'JS',
+      img: '/images/heo/2023786e7fc488f453d5fb2be760c96185c0075502.webp',
+      color: '#f7cb4f',
+    },
+    {
+      title: 'HTML',
+      img: '/images/heo/202372b4d760fd8a497d442140c295655426070302.webp',
+      color: '#e9572b'
+    },
+    {
+      title: 'Git',
+      img: '/images/heo/2023ffa5707c4e25b6beb3e6a3d286ede4c6071102.webp',
+      color: '#df5b40',
+    },
+    {
+      title: 'Rhino',
+      img: '/images/heo/20231ca53fa0b09a3ff1df89acd7515e9516173302.webp',
+      color: '#1f1f1f'
+    }
+  ],
 }
 export default CONFIG

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useImperativeHandle, useRef, useState } from 'react'
 import CONFIG from '../config'
+import { App } from './TagMove'
 
 /**
  * 顶部英雄区
@@ -21,6 +22,7 @@ const Hero = props => {
       id="hero-wrapper"
       className="recent-top-post-group w-full overflow-hidden select-none px-5 mb-4"
     >
+      
       <div
         id="hero"
         style={{ zIndex: 1 }}
@@ -241,11 +243,11 @@ function TopGroup(props) {
                   alt={p?.title}
                   src={p?.pageCoverThumbnail || siteInfo?.pageCover}
                 />
-                <div className="group-hover:text-indigo-600 dark:group-hover:text-yellow-600 line-clamp-2 overflow-hidden m-2 font-semibold">
+                <div className="group-hover:text-indigo-600 dark:group-hover:text-indigo-600 line-clamp-2 overflow-hidden m-2 font-semibold">
                   {p?.title}
                 </div>
                 {/* hover 悬浮的 ‘荐’ 字 */}
-                <div className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 duration-200 transition-all absolute -top-2 -left-2 bg-indigo-600 dark:bg-yellow-600  text-white rounded-xl overflow-hidden pr-2 pb-2 pl-4 pt-4 text-xs">
+                <div className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 duration-200 transition-all absolute -top-2 -left-2 bg-indigo-600   text-white rounded-xl overflow-hidden pr-2 pb-2 pl-4 pt-4 text-xs">
                   荐
                 </div>
               </div>

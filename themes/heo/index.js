@@ -40,6 +40,11 @@ import replaceSearchResult from '@/components/Mark'
 import LazyImage from '@/components/LazyImage'
 import WWAds from '@/components/WWAds'
 import { AdSlot } from '@/components/GoogleAdsense'
+import Script from 'next/script'
+import Mouse from './components/Mouse'
+import ScrollingTab from './components/ScrollingTab'
+import HackedText from './components/HackedText'
+import WebCover from './components/WebCover'
 
 /**
  * 基础布局 采用上中下布局，移动端使用顶部侧边导航栏
@@ -47,6 +52,8 @@ import { AdSlot } from '@/components/GoogleAdsense'
  * @returns {JSX.Element}
  * @constructor
  */
+
+
 const LayoutBase = props => {
   const {
     children,
@@ -63,6 +70,9 @@ const LayoutBase = props => {
       id="theme-heo"
       className="bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col"
     >
+      <Mouse/>
+
+
       {/* SEO信息 */}
       <CommonHead meta={meta} />
       <Style />
@@ -83,13 +93,17 @@ const LayoutBase = props => {
         >
           <div className={`w-full h-auto ${className || ''}`}>
             {/* 主区上部嵌入 */}
+
+
             {slotTop}
             {children}
+
           </div>
 
-          <div className="hidden xl:block">
+          <div className="hidden lg:block">
             {/* 主区快右侧 */}
             {slotRight}
+
           </div>
         </div>
       </main>
@@ -115,7 +129,10 @@ const LayoutIndex = props => {
       </div>
       {/* 通知横幅 */}
       <NoticeBar />
-      <Hero {...props} />
+      
+      <WebCover/>
+      
+      {/* <Hero {...props} /> */}
       <div className="max-w-[86rem] mx-auto px-3">
         <WWAds className="w-full" orientation="horizontal" />
       </div>
@@ -125,11 +142,14 @@ const LayoutIndex = props => {
   // 右侧栏 用户信息+标签列表
   const slotRight = <SideRight {...props} />
 
+
   return (
     <LayoutBase {...props} slotRight={slotRight} headerSlot={headerSlot}>
       <div id="post-outer-wrapper" className="px-5 md:px-0">
         {/* 文章分类条 */}
-        <CategoryBar {...props} />
+        {/* <HackedText/> */}
+        {/* 分类目录条 */}
+        {/* <CategoryBar {...props} /> */}
         {BLOG.POST_LIST_STYLE === 'page'
           ? (
           <BlogPostListPage {...props} />

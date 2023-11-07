@@ -1,23 +1,37 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import single from '../Single'
 
 export const MenuItemDrop = ({ link }) => {
   const [show, changeShow] = useState(false)
   const hasSubMenu = link?.subMenus?.length > 0
+  
+
 
   if (!link || !link.show) {
     return null
   }
 
-  return <div onMouseOver={() => changeShow(true)} onMouseOut={() => changeShow(false)} >
+
+  return <div className='nav-icon' onMouseOver={() => changeShow(true)} onMouseOut={() => changeShow(false)} >
 
         {/* 不含子菜单 */}
         {!hasSubMenu &&
             <Link
                 target={link?.to?.indexOf('http') === 0 ? '_blank' : '_self'}
                 href={link?.to}
-                className="font-sans hover:bg-black hover:bg-opacity-10 rounded-2xl flex justify-center items-center px-3 py-1 no-underline tracking-widest">
-                {link?.icon && <i className={link?.icon} />} {link?.name}
+                className="group nav-icon-self font-sans text-gray-400 hover:text-white hover:bg-slate-200 dark:hover:bg-gray-700  rounded-full flex w-12 h-12 m-auto justify-center items-center no-underline tracking-widest">
+                {link?.icon && <i className={link?.icon} />} {}
+
+                {/* tab悬浮气泡 */}
+                <span class="absolute opacity-0 -bottom-6 pointer-events-none transition duration-200 ease-in-out group-hover:translate-y-4 group-hover:opacity-100">
+                    <span class='absolute h-2 w-2 bg-[#4f65f0] -top-[7px] left-1/2  origin-top-left rotate-45' aria-hidden="true"></span>
+                    <span class=" bg-[#4f65f0] font-medium text-sm text-white px-3 py-2 rounded-md">
+                    {link?.name}
+                    </span>
+                </span>
+
+                
             </Link>}
 
         {/* 含子菜单的按钮 */}

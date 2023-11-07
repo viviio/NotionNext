@@ -129,24 +129,24 @@ const NavBar = props => {
         `}</style>
 
         {/* 顶部导航菜单栏 */}
-        <nav id='nav' className={`${fixedNav ? 'fixed' : 'relative bg-none'} ${textWhite ? 'text-white ' : 'text-black dark:text-white'}  ${navBgWhite ? 'bg-white dark:bg-[#18171d]' : 'bg-none'} z-20 h-16 top-0 w-full`}>
-            <div className='flex h-full mx-auto justify-between items-center max-w-[86rem] px-8'>
+        <nav id='nav' className={`${fixedNav ? 'fixed' : 'relative bg-none'} ${textWhite ? 'text-white ' : 'text-black dark:text-white'}  ${navBgWhite ? 'backdrop-blur-xl bg-white/80  dark:bg-black/70' : 'bg-none'} z-20 h-16 top-0 w-full`}>
+            <div className='flex flex-row h-full mx-auto justify-between items-center px-8'>
                 {/* 左侧logo */}
-                <div className='flex'>
+                <div className='flex flex-1 basis-1/4 h-10 justify-start items-center'>
                     <Logo {...props} />
                 </div>
 
                 {/* 中间菜单 */}
-                <div id='nav-bar-swipe' className={`hidden lg:flex flex-grow flex-col items-center justify-center h-full relative w-full ${activeIndex === 0 ? 'fade-in-down' : 'fade-in-up'}`}>
+                <div id='nav-bar-swipe' className={`hidden sm:flex sm:shrink basis-1/2 items-center justify-center h-full relative w-full ${activeIndex === 0 ? 'fade-in-down' : 'fade-in-up'}`}>
                     {activeIndex === 0 && <MenuListTop {...props} />}
                     {activeIndex === 1 && <h1 className='font-bold text-center text-light-400 dark:text-gray-400'>{BLOG.AUTHOR || BLOG.TITLE} {BLOG.BIO && <>|</>} {BLOG.BIO}</h1>}
                 </div>
 
                 {/* 右侧固定 */}
-                <div className='flex flex-shrink-0 justify-center items-center'>
+                <div className='flex flex-1 basis-1/4 justify-end items-center'>
                     <RandomPostButton {...props} />
-                    <SearchButton {...props}/>
-                    {!JSON.parse(BLOG.THEME_SWITCH) && <div className='hidden md:block'><DarkModeButton {...props} /></div>}
+                    {/* <SearchButton {...props}/> */}
+                    {/* {!JSON.parse(BLOG.THEME_SWITCH) && <div className='hidden md:block'><DarkModeButton {...props} /></div>} */}
                     <ReadingProgress />
 
                     {/* 移动端菜单按钮 */}

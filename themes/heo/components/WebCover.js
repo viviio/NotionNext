@@ -5,7 +5,7 @@ const WebCover = props => {
 
     return (
         <div class="content my-4">
-            <h1 class="title">SHARED IMAGINATION
+            <h1 class="title select-none">SHARED IMAGINATION
                 <div class="aurora">
                   <div class="aurora__item"></div>
                   <div class="aurora__item"></div>

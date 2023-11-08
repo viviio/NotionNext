@@ -30,7 +30,7 @@ const Busuanzi = dynamic(() => import('@/components/Busuanzi'), { ssr: false })
 const GoogleAdsense = dynamic(() => import('@/components/GoogleAdsense'), { ssr: false })
 const Messenger = dynamic(() => import('@/components/FacebookMessenger'), { ssr: false })
 const VConsole = dynamic(() => import('@/components/VConsole'), { ssr: false })
-const CustomContextMenu = dynamic(() => import('@/components/CustomContextMenu'), { ssr: false })
+// const CustomContextMenu = dynamic(() => import('@/components/CustomContextMenu'), { ssr: false })
 const DisableCopy = dynamic(() => import('@/components/DisableCopy'), { ssr: false })
 const AdBlockDetect = dynamic(() => import('@/components/AdBlockDetect'), { ssr: false })
 /**

@@ -19,7 +19,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                 data-aos-duration="200"
                 data-aos-once="false"
                 data-aos-anchor-placement="top-bottom"
-                className={'border bg-white dark:bg-[#1e1e1e] flex  flex-col h-[23rem] md:h-52 md:flex-row xl:h-96 xl:flex-col group w-full dark:border-gray-700 hover:border-indigo-600  dark:hover:border-indigo-600 duration-300 transition-colors justify-between overflow-hidden rounded-xl'}>
+                className={'outline outline-offset-2 bg-white dark:bg-[#1e1e1e] flex  flex-col h-[23rem] md:h-52 md:flex-row xl:h-96 xl:flex-col group w-full dark:border-black hover:outline-indigo-600  dark:hover:outline-indigo-600 duration-300 transition-colors justify-between overflow-hidden rounded-xl'}>
 
                 {/* 图片封面 */}
                 {showPageCover && (
@@ -31,31 +31,33 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                 )}
 
                 {/* 文字区块 */}
-                <div className={'flex p-6 xl:p-4 flex-col justify-between h-48 md:h-full xl:h-48 w-full md:w-7/12 xl:w-full'}>
+                <div className={'flex p-6 lg:p-7 flex-col justify-between m-auto h-40 md:h-44 xl:h-48 w-full md:w-7/12 xl:w-full'}>
                     <div>
                         {/* 分类 */}
-                        {post?.category && <div className={`flex mb-1 items-center ${showPreview ? 'justify-center' : 'justify-start'} hidden md:block flex-wrap dark:text-gray-500 text-gray-600 `}>
+                        {/* {post?.category && <div className={`flex mb-1 items-center ${showPreview ? 'justify-center' : 'justify-start'} hidden md:block flex-wrap dark:text-gray-500 text-gray-600 `}>
                             <Link passHref href={`/category/${post.category}`}
                                 className="cursor-pointer text-xs font-normal menu-link hover:text-indigo-700 dark:hover:text-indigo-700  dark:text-gray-600 transform">
                                 {post.category}
                             </Link>
-                        </div>}
+                        </div>} */}
 
                         {/* 标题 */}
                         <Link
                             href={`${BLOG.SUB_PATH}/${post.slug}`}
                             passHref
-                            className={' group-hover:text-indigo-700 dark:hover:text-indigo-700 dark:group-hover:text-indigo-600 text-black dark:text-gray-100  line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'}>
+                            className={' group-hover:text-indigo-700 dark:hover:text-indigo-700 dark:group-hover:text-indigo-600 text-black dark:text-gray-100  line-clamp-2 replace curcor-auto text-xl font-extrabold leading-tight'}>
                             <span className='menu-link '>{post.title}</span>
+
+                            {/* 摘要 */}
+                            {(!showPreview || showSummary) && (
+                                <p className="line-clamp-2 replace my-3 xl:my-3 text-gray-700  dark:text-gray-500 text-sm font-normal leading-tight">
+                                    {post.summary}
+                                </p>
+                            )}
                         </Link>
                     </div>
 
-                    {/* 摘要 */}
-                    {(!showPreview || showSummary) && (
-                        <p className="line-clamp-2 replace my-3 xl:my-1 text-gray-700  dark:text-gray-300 text-sm font-light leading-tight">
-                            {post.summary}
-                        </p>
-                    )}
+
 
                     <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
                         <div>

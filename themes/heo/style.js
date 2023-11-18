@@ -10,19 +10,23 @@ const Style = () => {
   return (
     <style jsx global>{`
       @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@500&display=swap');
+      @import url("https://fonts.googlefonts.cn/css?family=Poppins:500");
+      @import url("https://stijndv.com/fonts/Eudoxus-Sans.css");
+      
+      
       
       //渐变标题
 
       :root {
-        --bg: #18171d;
+        --bg: #000;
         --clr-1: #31dade;
         --clr-2: #4169e1;
         --clr-3: #6faefe;
         --clr-4: #f3b6fc;
       
         --blur: 1rem;
-        --fs: clamp(3rem, 8vw, 7rem);
-        --ls: clamp(-1.75px, -0.25vw, -3.5px);
+        --fs: clamp(3rem, 8vw, 4rem);
+        --ls: clamp(-2.75px, -0.25vw, -6.5px);
       }
 
       .content {
@@ -35,7 +39,8 @@ const Style = () => {
         font-size: var(--fs);
         line-height:1.25;
         
-        font-family:"Red Rose";
+        font-family: eudoxus sans;
+        font-weight:500;
         letter-spacing: var(--ls);
         position: relative;
         overflow: hidden;

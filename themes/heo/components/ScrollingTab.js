@@ -125,7 +125,7 @@ function TagsGroupBar() {
         })}
         </div>
         {/* 两端透明遮罩 */}
-        <div className='absolute inset-0 pointer-events-none dark:bg-gradient-to-r from-[#1a191d] via-transparent via-50% to-[#1a191d]'/>
+        <div className='absolute inset-0 pointer-events-none dark:bg-gradient-to-r from-[#000] via-transparent via-50% to-[#000]'/>
       </div>
     </div>
   )

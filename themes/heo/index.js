@@ -68,7 +68,7 @@ const LayoutBase = props => {
   return (
     <div
       id="theme-heo"
-      className="bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col"
+      className="bg-[#f7f9fe] dark:bg-[#000] h-full min-h-screen flex flex-col"
     >
       <Mouse/>
 
@@ -340,7 +340,7 @@ const LayoutSlug = props => {
       showTag={false}
       slotRight={slotRight}
     >
-      <div className={`w-full xl:max-w-5xl ${hasCode ? 'xl:w-[73.15vw]' : ''} lg:hover:shadow lg:border rounded-2xl lg:px-2 lg:py-4 bg-white dark:bg-[#18171d] dark:border-gray-600 article`}>
+      <div className={`w-full xl:max-w-5xl ${hasCode ? 'xl:w-[73.15vw]' : ''} lg:hover:shadow  rounded-2xl lg:px-2 lg:py-4 bg-white dark:bg-[#18171d] dark:border-gray-600 article`}>
         {lock && <ArticleLock validPassword={validPassword} />}
 
         {!lock && (

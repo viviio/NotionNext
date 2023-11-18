@@ -28,7 +28,7 @@ export default function PostHeader({ post, siteInfo }) {
                 }
             `}</style>
 
-            <div style={{ backdropFilter: 'blur(15px)' }} className={'bg-[#0060e0] absolute top-0 w-full h-full py-10 flex justify-center items-center'}>
+            <div style={{ backdropFilter: 'blur(15px)' }} className={'bg-[#5b68ed] absolute top-0 w-full h-full py-10 flex justify-center items-center'}>
 
                 {/* 文章背景图 */}
                 <div id='post-cover-wrapper' style={{ filter: 'blur(15px)' }} className='coverdiv lg:translate-x-96 opacity-50 lg:rotate-12'>
@@ -36,7 +36,7 @@ export default function PostHeader({ post, siteInfo }) {
                 </div>
 
                 {/* 文章文字描述 */}
-                <div id='post-info' className='absolute top-48 z-10 flex flex-col space-y-4 lg:-mt-12 w-full max-w-[86rem] px-5'>
+                <div id='post-info' className='absolute top-48 z-10 flex flex-col space-y-4 lg:-mt-12 w-full max-w-[86rem] px-16'>
                     {/* 分类+标签 */}
                     <div className='flex justify-center md:justify-start items-center'>
                         {post.category && <>

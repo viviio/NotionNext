@@ -45,7 +45,8 @@ const BLOG = {
     // 'https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css',
     'https://fonts.googleapis.com/css?family=Bitter&display=swap',
     'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap',
-    'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300&display=swap'
+    'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300&display=swap',
+    'https://stijndv.com/fonts/Eudoxus-Sans.css'
   ],
   // 无衬线字体 例如'"LXGW WenKai"'
   FONT_SANS: [
@@ -65,7 +66,8 @@ const BLOG = {
     '"Source Han Sans SC"',
     'Arial',
     'sans-serif',
-    '"Apple Color Emoji"'
+    '"Apple Color Emoji"',
+    '"eudoxus sans"'
   ],
   // 衬线字体 例如'"LXGW WenKai"'
   FONT_SERIF: [

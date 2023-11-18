@@ -47,7 +47,7 @@ export function InfoCard(props) {
                     <h2 className='text-xl font-extrabold'>
                     Yuwei Liang
                     </h2>
-                    <p class='text-sm pt-1'>vviii2333@outlook.com</p>
+                    <p class='text-sm pt-1 select-all'>vviii2333@outlook.com</p>
                 </div>
                 <div className='flex space-x-3   items-center '>
                     {/* 两个社交按钮 */}

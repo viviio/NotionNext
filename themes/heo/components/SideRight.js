@@ -60,7 +60,7 @@ export default function SideRight(props) {
                 {/* 标签和成绩 */}
                 <Card className={'bg-white dark:bg-[#1e1e1e] dark:text-white'}>
                     <TagGroups tags={tagOptions} currentTag={currentTag} />
-                    <hr className='mx-1 flex border-dashed relative my-4' />
+                    <hr className='mx-1 flex border-dashed border-gray-700 relative my-4' />
                     <AnalyticsCard {...props} />
                 </Card>
             </div>

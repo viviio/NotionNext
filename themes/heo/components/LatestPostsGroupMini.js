@@ -21,7 +21,7 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
   }
 
   return <>
-        <div className=" mb-2 px-1 flex flex-nowrap justify-between">
+        <div className="text-gray-500 text-sm font-normal mb-2 flex flex-nowrap justify-between">
             <div>
                 <i className="mr-2 fas fas fa-history" />
                 {locale.COMMON.LATEST_POSTS}
@@ -46,13 +46,13 @@ export default function LatestPostsGroupMini ({ latestPosts, siteInfo }) {
                     <div
                         className={
                             (selected ? ' text-indigo-400 ' : 'dark:text-gray-400 ') +
-                            ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
+                            ' text-sm font-normal overflow-x-hidden hover:text-indigo-600 pl-3 duration-200 w-full rounded ' +
                             ' hover:text-indigo-400 cursor-pointer items-center flex'
                         }
                     >
                         <div>
-                            <div className='line-clamp-2 menu-link'>{post.title}</div>
-                            <div className="text-gray-500">{post.lastEditedDay}</div>
+                            <div className='line-clamp-2 menu-link mb-1'>{post.title}</div>
+                            <div className="text-gray-500 text-xs">{post.lastEditedDay}</div>
                         </div>
                     </div>
 

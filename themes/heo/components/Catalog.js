@@ -59,8 +59,8 @@ const Catalog = ({ toc }) => {
     return <></>
   }
 
-  return <div className='px-3 py-1 dark:text-white text-black'>
-    <div className='w-full'><i className='mr-1 fas fa-stream' />{locale.COMMON.TABLE_OF_CONTENTS}</div>
+  return <div className='py-1 dark:text-gray-500 text-black'>
+    <div className='w-full text-sm font-normal'><i className='mr-1 fas fa-stream' />{locale.COMMON.TABLE_OF_CONTENTS}</div>
     <div className='overflow-y-auto max-h-36 lg:max-h-96 overscroll-none scroll-hidden' ref={tRef}>
       <nav className='h-full'>
         {toc.map((tocItem) => {

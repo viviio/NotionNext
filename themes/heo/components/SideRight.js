@@ -39,7 +39,7 @@ export default function SideRight(props) {
 
             <div className='sticky top-20 space-y-4'>
                 {post && post.toc && post.toc.length > 0 && (
-                    <Card className='bg-white dark:bg-[#1e1e1e]'>
+                    <Card className='bg-white dark:bg-heo-card-black'>
                         <Catalog toc={post.toc} />
                     </Card>
                 )}
@@ -48,7 +48,7 @@ export default function SideRight(props) {
                 <TouchMeCard />
 
                 {/* 最新文章列表 */}
-                <div className={' dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-xl lg:p-7 p-6 hidden lg:block bg-white'}>
+                <div className={' dark:border-gray-700 dark:bg-heo-card-black dark:text-white rounded-xl lg:p-7 p-6 hidden lg:block bg-white'}>
                     <LatestPostsGroupMini {...props} />
                 </div>
 
@@ -58,7 +58,7 @@ export default function SideRight(props) {
                 {/* <Live2D /> */}
 
                 {/* 标签和成绩 */}
-                <Card className={'bg-white dark:bg-[#1e1e1e] dark:text-white'}>
+                <Card className={'bg-white dark:bg-heo-card-black dark:text-white'}>
                     <TagGroups tags={tagOptions} currentTag={currentTag} />
                     <hr className='mx-1 flex border-dashed border-gray-700 relative my-4' />
                     <AnalyticsCard {...props} />

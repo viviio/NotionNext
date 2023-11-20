@@ -22,7 +22,7 @@ const Logo = props => {
         // </Link>
 
         <Link href='/' passHref legacyBehavior >
-            <div className='absolute h-5'>
+            <div className='absolute h-5 select-none'>
                 <LazyImage src='/myLogo3.svg' className=' transition duration-500 ease-in-out h-full cursor-pointer transform  hover:scale-125' style={{}}/>
                 
             </div>

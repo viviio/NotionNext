@@ -12,7 +12,7 @@ export default function TouchMeCard() {
     return <></>
   }
   return (
-        <div className={'relative h-28 text-white flex flex-col cursor-pointer border rounded-xl bg-[#4f65f0]  dark:border-gray-600'}>
+        <div className={'relative h-28 text-white flex flex-col cursor-pointer  rounded-xl overflow-hidden bg-[#4f65f0]  '}>
 
             <div className='absolute left-0 top-0 w-full h-full' style={{ background: 'url(https://bu.dusays.com/2023/05/16/64633c4cd36a9.png) center center no-repeat' }}></div>
             <FlipCard

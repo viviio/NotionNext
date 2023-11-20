@@ -15,8 +15,8 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-        <div id='post-bg' className="w-full h-[30rem] relative md:flex-shrink-0 overflow-hidden bg-cover bg-center bg-no-repeat z-10 mb-5">
-            <style jsx>{` 
+        <div id='post-bg' className="w-full relative md:flex-shrink-0 overflow-hidden bg-cover bg-center bg-no-repeat z-10 mb-5">
+            {/* <style jsx>{` 
                 .coverdiv:after {
                     position: absolute;
                     content: '';
@@ -26,36 +26,44 @@ export default function PostHeader({ post, siteInfo }) {
                     left: 0;
                     box-shadow: 110px -130px 300px 60px #0060e0 inset;
                 }
-            `}</style>
+            `}</style> */}
 
-            <div style={{ backdropFilter: 'blur(15px)' }} className={'bg-[#5b68ed] absolute top-0 w-full h-full py-10 flex justify-center items-center'}>
+            <div style={{ backdropFilter: 'blur(15px)' }} className={' w-full h-full pb-4 flex flex-col justify-center items-center'}>
 
                 {/* 文章背景图 */}
-                <div id='post-cover-wrapper' style={{ filter: 'blur(15px)' }} className='coverdiv lg:translate-x-96 opacity-50 lg:rotate-12'>
-                    <LazyImage id='post-cover' className='w-full h-full object-cover opacity-80 max-h-[50rem] min-w-[50vw] min-h-[20rem]' src={headerImage} />
+                <div id='post-cover-wrapper' style={{  }} className='coverdiv '>
+                    <LazyImage id='post-cover' className='w-screen max-h-[40rem]  object-cover  min-w-[50vw] min-h-[20rem]' src={headerImage} />
                 </div>
 
                 {/* 文章文字描述 */}
-                <div id='post-info' className='absolute top-48 z-10 flex flex-col space-y-4 lg:-mt-12 w-full max-w-[86rem] px-16'>
+                <div id='post-info' className='pt-10 z-10 flex flex-col space-y-1  w-full max-w-[86rem] px-8'>
+                    
+
+                    {/* 文章Title */}
+                    <div className="max-w-5xl font-bold text-3xl lg:text-4xl md:leading-snug shadow-text-md flex justify-start text-white">
+                        {/* <NotionIcon icon={post.pageIcon} /> */}
+                        {post.title}
+                    </div>
+
                     {/* 分类+标签 */}
-                    <div className='flex justify-center md:justify-start items-center'>
-                        {post.category && <>
+                    <div className='flex justify-start items-center'>
+                        {/* {post.category && <>
                             <Link href={`/category/${post.category}`} className='mr-4' passHref legacyBehavior>
                                 <div className="cursor-pointer font-sm font-bold px-3 py-1 rounded-lg bg-blue-500 hover:bg-white text-white hover:text-blue-500 duration-200 ">
                                     {post.category}
                                 </div>
                             </Link>
-                        </>}
+                        </>} */}
 
                         {post.tagItems && (
-                            <div className="hidden md:flex justify-center flex-nowrap overflow-x-auto">
+                            <div className="flex justify-center flex-nowrap overflow-x-auto text-sm">
                                 {post.tagItems.map((tag, index) => (
                                     <Link
                                         key={index}
                                         href={`/tag/${encodeURIComponent(tag.name)}`}
                                         passHref
-                                        className={'cursor-pointer inline-block text-gray-50 hover:text-white duration-200 py-0.5 px-1 whitespace-nowrap '}>
-                                        <div className='font-light flex items-center'><HashTag className='text-gray-200 stroke-2 mr-0.5 w-3 h-3' /> {tag.name + (tag.count ? `(${tag.count})` : '')} </div>
+                                        className={'cursor-pointer inline-block text-gray-500 hover:text-white duration-200 py-0.5  pr-3 whitespace-nowrap '}>
+                                        <div className=' font-normal flex items-center'><HashTag className='text-gray-500 stroke-2 mr-0.5 w-3 h-3' /> {tag.name + (tag.count ? `(${tag.count})` : '')} </div>
 
                                     </Link>
                                 ))}
@@ -63,29 +71,27 @@ export default function PostHeader({ post, siteInfo }) {
                         )}
                     </div>
 
-                    {/* 文章Title */}
-                    <div className="max-w-5xl font-bold text-3xl lg:text-5xl md:leading-snug shadow-text-md flex  justify-center md:justify-start text-white">
-                        <NotionIcon icon={post.pageIcon} />{post.title}
-                    </div>
-
                     {/* 标题底部补充信息 */}
-                    <section className="flex-wrap shadow-text-md flex text-sm  justify-center md:justify-start mt-4 text-white dark:text-gray-400 font-light leading-8">
+                    <section className="flex-wrap shadow-text-md flex text-sm  justify-start mt-4 text-white dark:text-gray-400 font-light leading-8">
 
                         <div className='flex justify-center dark:text-gray-200 text-opacity-70'>
-                            <div className='mr-2'><WordCount /></div>
+                            {/* <div className='mr-2'><WordCount /></div> */}
                             {post?.type !== 'Page' && (
                                 <>
-                                    <Link
+                                    {/* <Link
                                         href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
                                         passHref
                                         className="pl-1 mr-2 cursor-pointer hover:underline">
                                         <i className="fa-regular fa-calendar"></i> {post?.publishDay}
-                                    </Link>
+                                    </Link> */}
+                                    
                                 </>
                             )}
 
-                            <div className="pl-1 mr-2">
-                              <i className="fa-regular fa-calendar-check"></i> {post.lastEditedDay}
+                            <div className="pl-1 mr-4 text-gray-400">
+                                {post?.publishDay}
+                              {/* <i className="fa-regular fa-calendar"></i>  */}
+                              {/* <i className="fa-regular fa-calendar-check"></i> {post.lastEditedDay} */}
                             </div>
 
                         </div>
@@ -97,7 +103,7 @@ export default function PostHeader({ post, siteInfo }) {
 
                 </div>
 
-                <WavesArea />
+                {/* <WavesArea /> */}
 
             </div>
         </div>

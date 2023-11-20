@@ -69,6 +69,7 @@
 
 .notion {
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--fg-color);
   caret-color: var(--fg-color);
@@ -203,7 +204,7 @@
 }
 
 .medium-zoom-image {
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 .medium-zoom-image--opened {
@@ -598,7 +599,8 @@ summary > .notion-h {
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', NotoColorEmoji,
     'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji', EmojiSymbols;
   font-size: 1.1em;
-  margin: 2px 4px 0 2px;
+
+  margin: 2px ;
   fill: var(--fg-color-6);
   color: var(--fg-color-icon);
   @apply dark:fill-gray-200
@@ -698,10 +700,12 @@ svg.notion-page-icon {
 
 .notion-asset-wrapper-image {
   max-width: 100%;
+  
 }
 
 .notion-asset-wrapper-image > div {
     height: auto !important;
+
 }
 
 .notion-asset-wrapper-full {
@@ -722,6 +726,7 @@ svg.notion-page-icon {
 }
 
 .notion-text {
+  
   width: 100%;
   white-space: pre-wrap;
   line-height: 1.5rem !important;
@@ -927,7 +932,7 @@ code[class*='language-'] {
   padding: 16px 16px 16px 12px;
   display: inline-flex;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 8px;
   border-width: 1px;
   align-items: center;
   box-sizing: border-box;
@@ -940,7 +945,7 @@ code[class*='language-'] {
 }
 
 .notion-callout .notion-page-icon {
-  align-self: flex-start;
+  align-self: center;
   width: 24px;
   height: 24px;
   font-size: 1em;

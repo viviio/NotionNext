@@ -21,7 +21,7 @@ export default function ArticleRecommend({ recommendPosts, siteInfo }) {
   }
 
   return (
-        <div className="pt-8 hidden md:block">
+        <div className="py-8 hidden md:block">
 
             {/* 推荐文章 */}
             <div className=" mb-2 px-1 flex flex-nowrap justify-between">

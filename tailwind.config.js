@@ -18,6 +18,9 @@ module.exports = {
           'background-gray': '#f5f5f5',
           'black-gray': '#101414',
           'light-gray': '#e5e5e5'
+        },
+        heo:{
+          'card-black':'#18171d',
         }
       },
       maxWidth: {

@@ -70,7 +70,9 @@ const LayoutBase = props => {
       id="theme-heo"
       className="bg-[#f7f9fe] dark:bg-[#000] h-full min-h-screen flex flex-col"
     >
-      <Mouse/>
+      <div className="hidden lg:block">
+        <Mouse/>
+      </div>
 
 
       {/* SEO信息 */}
@@ -91,7 +93,7 @@ const LayoutBase = props => {
             'w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'
           }
         >
-          <div className={`w-full h-auto ${className || ''}`}>
+          <div className={`w-full h-auto py-2 ${className || ''}`}>
             {/* 主区上部嵌入 */}
 
 
@@ -280,7 +282,7 @@ const LayoutArchive = props => {
 
   return (
     <LayoutBase {...props} slotRight={slotRight} headerSlot={headerSlot}>
-      <div className="p-5 rounded-xl border dark:border-gray-600 max-w-6xl w-full bg-white dark:bg-[#1e1e1e]">
+      <div className="p-5 rounded-xl border dark:border-gray-600 max-w-6xl w-full bg-white dark:bg-heo-card-black">
         {/* 文章分类条 */}
         <CategoryBar {...props} border={false} />
 
@@ -340,13 +342,13 @@ const LayoutSlug = props => {
       showTag={false}
       slotRight={slotRight}
     >
-      <div className={`w-full xl:max-w-5xl ${hasCode ? 'xl:w-[73.15vw]' : ''} lg:hover:shadow  rounded-2xl lg:px-2 lg:py-4 bg-white dark:bg-[#18171d] dark:border-gray-600 article`}>
+      <div className={`w-full xl:max-w-5xl ${hasCode ? 'xl:w-[73.15vw]' : ''} lg:hover:shadow  rounded-2xl lg:px-2 lg:py-4 bg-white dark:bg-heo-card-black dark:border-gray-600 article`}>
         {lock && <ArticleLock validPassword={validPassword} />}
 
         {!lock && (
           <div
             id="article-wrapper"
-            className="overflow-x-auto flex-grow mx-auto md:w-full md:px-5 "
+            className="overflow-x-auto flex-grow px-2 mx-auto md:w-full  "
           >
             <article
               data-aos="fade-up"
@@ -365,15 +367,15 @@ const LayoutSlug = props => {
               </section>
 
               {/* 分享 */}
-              <ShareBar post={post} />
+              {/* <ShareBar post={post} /> */}
               {post?.type === 'Post' && (
                 <div className="px-5">
                   {/* 版权 */}
-                  <ArticleCopyright {...props} />
+                  {/* <ArticleCopyright {...props} /> */}
                   {/* 文章推荐 */}
                   <ArticleRecommend {...props} />
                   {/* 上一篇\下一篇文章 */}
-                  <ArticleAdjacent {...props} />
+                  {/* <ArticleAdjacent {...props} /> */}
                 </div>
               )}
             </article>

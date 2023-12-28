@@ -19,7 +19,7 @@ const WebCover = props => {
                     <span class="animate-ping absolute inline-flex h-full w-full bg-green-300 rounded-full opacity-75"></span>
                     <span class="relative inline-flex bg-green-400 rounded-full w-3 h-3"></span>
                  </span>
-                 <p class="subtitle ml-3 select-none font-['eudoxus sans'] font-normal text-xs md:text-sm">Currently A Designer at Tencent </p>
+                 <p class="subtitle ml-3 select-none font-['eudoxus sans'] font-normal text-xs md:text-sm">Tencent &larr; SAIC &larr; Netease </p>
               </div>
             </div>
             

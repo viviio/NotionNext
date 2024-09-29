@@ -7,15 +7,12 @@ const TagItemMini = ({ tag, selected = false }) => {
       key={tag}
       href={selected ? '/' : `/tag/${encodeURIComponent(tag.name)}`}
       passHref
-      className={'group/tag cursor-pointer inline-block  pr-4 dark:text-gray-500 text-xs whitespace-nowrap ' }>
-      <div className='relative'>
-        {/* <span class="block absolute w-full bg-white h-[1px]"></span> */}
-        <span class="absolute block w-full origin-left scale-x-0 h-4 mr-0.5 bg-indigo-500/30 group-hover/tag:scale-x-100 transition translate duration-300"></span>
-        <span class="font-['eudoxus sans'] text-xs  relative  underline-offset-4  decoration-dotted decoration-1 decoration-white group-hover/tag:text-indigo-100 group-hover/tag:decoration-indigo-500 font-normal flex items-center"><HashTag className='text-gray-500 stroke-2 mr-0.5 w-2 h-2'/> {tag.name + (tag.count ? `(${tag.count})` : '')} </span>
-        
-        
-
-        
+      className={
+        'cursor-pointer inline-block hover:text-white hover:bg-indigo-600 dark:hover:bg-yellow-600 px-2 py-1 rounded-2xl dark:text-white duration-200 text-sm whitespace-nowrap '
+      }>
+      <div className='font-light flex items-center'>
+        <HashTag className='stroke-2 mr-0.5 w-3 h-3' />{' '}
+        {tag.name + (tag.count ? `(${tag.count})` : '')}{' '}
       </div>
     </Link>
   )
